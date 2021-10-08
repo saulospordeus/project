@@ -6,7 +6,7 @@ describe 'Visitor visit homepage' do
     #act
     visit root_path
     #assert
-    expect(page).to have_css('h1', text: 'P&P')
-    expect(page).to have_css('h3', text: 'Boas vindas ao sistema que aproxima pessoas de projetos')
+    expect(page).to have_text('P&P')
+    expect(page).to have_text('Bem vindo ao sistema que aproxima pessoas de projetos')
   end
 end
