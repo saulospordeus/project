@@ -18,6 +18,10 @@ describe "User register project" do
 #Assert
     expect(page).to have_text('Título: Projeto X')
     expect(page).to have_text('Descrição: Projeto X consiste na criação de um site.')
+    expect(page).to have_text('Habilidades desejadas: O profissional que pretende colaborar com o Projeto X deve ser pontual e criativo.')
+    expect(page).to have_text('Data limite: 2221-10-12') #TODO FORMATO DA DATA
+    expect(page).to have_text('Atuação: Remota')
+    expect(page).to have_text('Valor máximo: 200.0') #TODO FORMATO DINHEIRO
     expect(current_path).to eq(plans_path)
     end
 end
