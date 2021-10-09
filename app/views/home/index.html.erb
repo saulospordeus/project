@@ -2,6 +2,7 @@
 <h2>Bem vindo ao sistema que aproxima pessoas de projetos</h3>
 <% if user_signed_in? %>
   <h3><%= link_to "Ver seus projetos", plans_path%></h3>
+  <h3><%= link_to "Cadastrar projeto", new_plan_path%></h3>
   <% else %>
   <h2>Registrar-me:</h3>
   <h3><%= link_to 'Procuro pessoas para meu projeto!', new_user_registration_path %> </h3>

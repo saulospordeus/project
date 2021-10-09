@@ -1,0 +1,15 @@
+<%= form_with(model: @plan) do |f| %>
+    <%= f.label :title, 'Título' %>
+    <%= f.text_field :title %>
+    <%= f.label :description, 'Descrição' %>
+    <%= f.text_field :description %>
+    <%= f.label :hability, 'Habilidades desejadas' %>
+    <%= f.text_field :hability %>
+    <%= f.label :value, 'Valor máximo' %>
+    <%= f.text_field :value %>
+    <%= f.label :limit_date, 'Data limite' %>
+    <%= f.text_field :limit_date %>
+    <%= f.label :presence_type, "Atuação" %>
+    <%= f.select :presence_type, ["Remota", "Presencial"] %>  
+  <%= f.submit 'Cadastrar' %>
+<% end %>

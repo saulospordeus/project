@@ -1,5 +1,9 @@
-<h1>Meus Projetos</h1>
+<h1>Projetos</h1>
+<% if @plans.empty? %>
+<h3> Você não tem projeto cadastrado.</h3>
+  <% else %>
 <% @plans.each do |p| %>
-    <%= p.title  %>
-    <%= p.description  %>
+<h3>Título: <%= p.title  %></h3>
+<h4>Descrição: <%= p.description  %></h4>
   <% end %>
+<% end %>
