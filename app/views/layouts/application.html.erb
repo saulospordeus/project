@@ -14,8 +14,12 @@
   <% if user_signed_in? %>
   <%= current_user.email %>
   <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  <% elsif professional_signed_in? %>
+  <%= current_professional.email %>
+  <%= link_to 'Logout', destroy_professional_session_path, method: :delete %>
+    <p><%= notice %></p>
+    <p><%= alert %></p>
   <% else %>
-  <%= link_to 'Sign in', new_user_session_path %></p>
     <p><%= notice %></p>
     <p><%= alert %></p>
   <% end %>

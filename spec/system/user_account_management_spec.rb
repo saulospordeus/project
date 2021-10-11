@@ -38,7 +38,7 @@ describe "Account Management" do
         it 'successfully' do
           user = User.create!(email: 'jane@doe.com.br', password: '123456')
           visit root_path
-          click_on 'Sign in'
+          click_on 'Sign in: como dono de um projeto!'
           fill_in 'Email', with: 'jane@doe.com.br'
           fill_in 'Password', with: '123456'
           click_on 'Log in'
@@ -53,7 +53,7 @@ describe "Account Management" do
         it 'must fill all fields' do 
             user = User.create!(email: 'jane@doe.com.br', password: '123456')
             visit root_path
-            click_on 'Sign in'
+            click_on 'Sign in: como dono de um projeto!'
             fill_in 'Email', with: 'jane@doe.com.br'
             click_on 'Log in'
 
