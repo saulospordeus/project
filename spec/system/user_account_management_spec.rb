@@ -16,7 +16,6 @@ describe "Account Management" do
         expect(current_path).to eq(root_path)
         expect(page).to have_link('Logout')
         expect(page).to_not have_link('Sign up')
-        expect(page).to_not have_link('login')
     end
     
         it 'must fill all fields' do 
@@ -46,7 +45,6 @@ describe "Account Management" do
     
           expect(page).to have_text('jane@doe.com.br')
           expect(current_path).to eq(root_path)
-          expect(page).to_not have_link('Log in')
           expect(page).to have_link('Logout')
         end
           
@@ -59,7 +57,6 @@ describe "Account Management" do
 
             expect(page).to_not have_text('jane@doe.com.br')
             expect(current_path).to eq(new_user_session_path)
-            expect(page).to_not have_link('Log in')
             expect(page).to_not have_link('Logout')
         end
     end

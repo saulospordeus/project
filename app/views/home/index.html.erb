@@ -3,6 +3,11 @@
 <% if user_signed_in? %>
   <h3><%= link_to "Ver seus projetos", plans_path%></h3>
   <h3><%= link_to "Cadastrar projeto", new_plan_path%></h3>
+<% elsif professional_signed_in? %>
+ <h3>Nome social: <%= current_professional.profile.social_name %></h3>
+ <h3>Formação: <%= current_professional.profile.background %></h3>
+ <h3>Descrição: <%= current_professional.profile.description %></h3>
+ <h3>Área: <%= current_professional.profile.area %></h3>
 <% else %>
   <h2>Registrar-me:</h2>
     <h3><%=link_to 'Sign in: como dono de um projeto!', new_user_session_path %></h3>
@@ -11,6 +16,3 @@
     <h3><%= link_to 'Procuro pessoas para meu projeto!', new_user_registration_path %> </h3>
     <h3><%= link_to 'Procuro projetos para mim!', new_professional_registration_path %> </h3>
 <% end %>
-
-<!- #TODO AJEITAR AS TELAS: OU CLICA EM SIGN IN E DAÍ ESCOLHE OU VER A DOC DO DEVISE:  https://github.com/heartcombo/devise/wiki/How-to-Setup-Multiple-Devise-User-Models ->
-  

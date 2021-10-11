@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2021_10_11_174033) do
     t.string "area"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "professionals_id"
-    t.index ["professionals_id"], name: "index_profiles_on_professionals_id"
+    t.integer "professional_id"
+    t.index ["professional_id"], name: "index_profiles_on_professional_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,5 +62,5 @@ ActiveRecord::Schema.define(version: 2021_10_11_174033) do
   end
 
   add_foreign_key "plans", "users"
-  add_foreign_key "profiles", "professionals", column: "professionals_id"
+  add_foreign_key "profiles", "professionals"
 end
