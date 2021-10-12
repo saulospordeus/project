@@ -12,7 +12,7 @@ describe "Account Management" do
 #TODO TRADUZIR
 #TODO FLASH MENSAGEM
             expect(page).to have_text('jane@doe.com.br')
-            expect(current_path).to eq(root_path)
+            expect(current_path).to eq(new_profile_path)
             expect(page).to have_link('Logout')
             expect(page).to_not have_link('Sign up')
         end
@@ -33,7 +33,9 @@ describe "Account Management" do
     end
     context 'sign in' do
         it 'successfully' do
-          Professional.create!(email: 'jane@doe.com.br', password: '123456')
+          professional = Professional.create!(email: 'jane@doe.com.br', password: '123456')
+          Profile.create!(name: 'John Doe', social_name: 'Jane Doe', background: 'Formada pela Campus Code no programa Treinadev',
+          description: 'Sou uma profissional dedicada e criativa', area: 'Desenvolvimento', professional: professional)
           visit root_path
           click_on 'Sign in: como profissional!'
           fill_in 'Email', with: 'jane@doe.com.br'
