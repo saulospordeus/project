@@ -31,7 +31,7 @@ describe "User sees plans" do
         visit plans_path
         #Assert
         expect(page).to have_text('jane@doe.com.br')
-        expect(page).to have_text('Você não tem projeto cadastrado.')
+        expect(page).to have_text('Não há projeto disponível.')
         expect(current_path).to eq(plans_path)
     end
 end
