@@ -9,6 +9,7 @@
  <h3>Descrição: <%= current_professional.profile.description %></h3>
  <h3>Área: <%= current_professional.profile.area %></h3>
  <h3><%= link_to "Ver projetos", plans_path%></h3>
+
 <% else %>
   <h2>Registrar-me:</h2>
     <h3><%=link_to 'Sign in: como dono de um projeto!', new_user_session_path %></h3>
