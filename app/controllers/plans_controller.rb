@@ -1,7 +1,11 @@
 class PlansController < ApplicationController
 
     def index
-        @plans = Plan.all
+        if params[:search]
+            @plans = Plan.where(title: params[:search])
+        else
+            @plans = Plan.all
+        end
     end
 
     def new
@@ -16,11 +20,11 @@ class PlansController < ApplicationController
         else
             render :new
         end
-     end
+    end
      private
 
      def plan_params
        params.require(:plan).permit(:title, :description, :hability, :value,
                                         :limit_date, :presence_type)
-     end
     end
+end

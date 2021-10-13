@@ -52,7 +52,7 @@ describe "professional search for projects'" do
         login_as professional, scope: :professional
         visit root_path
         click_on 'Ver projetos'
-        fill_in 'Buscar Projetos', with: 'app'
+        fill_in 'search', with: 'Mega App'
         click_on 'Buscar'
 
         #Assert

@@ -4,12 +4,15 @@
   <h3><%= link_to "Ver seus projetos", plans_path%></h3>
   <h3><%= link_to "Cadastrar projeto", new_plan_path%></h3>
 <% elsif professional_signed_in? %>
- <h3>Nome social: <%= current_professional.profile.social_name %></h3>
- <h3>Formação: <%= current_professional.profile.background %></h3>
- <h3>Descrição: <%= current_professional.profile.description %></h3>
- <h3>Área: <%= current_professional.profile.area %></h3>
- <h3><%= link_to "Ver projetos", plans_path%></h3>
-
+  <% if current_professional.profile %>
+    <h3>Nome social: <%= current_professional.profile.social_name %></h3>
+    <h3>Formação: <%= current_professional.profile.background %></h3>
+    <h3>Descrição: <%= current_professional.profile.description %></h3>
+    <h3>Área: <%= current_professional.profile.area %></h3>
+    <h3><%= link_to "Ver projetos", plans_path%></h3>
+  <% else %>
+     <h3><%= link_to "Preencha seu perfil", new_profile_path %></h3>
+  <% end %>
 <% else %>
   <h2>Registrar-me:</h2>
     <h3><%=link_to 'Sign in: como dono de um projeto!', new_user_session_path %></h3>

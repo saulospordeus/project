@@ -59,8 +59,9 @@ describe "professional" do
             professional = Professional.create!(email: 'jane@doe.com.br', password: '123456')
         #Act
             login_as professional, scope: :professional
+            visit root_path
         #Assert
-            expect(current_path).to eq(new_profile_path)
+        expect(page).to have_text("Preencha seu perfil")
         end
 
 end
