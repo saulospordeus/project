@@ -3,5 +3,6 @@
   <p>Data final: <%= offer.finish_date %></p>
   <p>Valor por hora: <%= offer.value %></p>
   <p><%= button_to "Aceitar oferta", plan_offer_accept_path(id: offer.id)%> </p>
+  <p><%= button_to "Recusar oferta", plan_offer_refuse_path(id: offer.id)%> </p>
 
 <% end %>

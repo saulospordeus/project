@@ -10,9 +10,9 @@ class Offer < ApplicationRecord
         self.save
     end
 
+    def refuse
+        self.status = "refused"
+        self.save
+    end
 
-    #def refuse 
-    #    self.status = 2
-    #    self.save
-    #end
 end

@@ -30,6 +30,12 @@ class OffersController < ApplicationController
         @offer.accept
         redirect_to plan_offer_path(id: @offer)
     end
+
+    def refuse
+        @offer = Offer.find(params[:id])
+        @offer.refuse
+        redirect_to plan_offer_path(id: @offer)
+    end
  
     private
    
