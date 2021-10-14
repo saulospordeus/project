@@ -1,10 +1,14 @@
 class PlansController < ApplicationController
 
     def index
-        if params[:search]
-            @plans = Plan.where(title: params[:search])
+        if user_signed_in?
+            @plans = Plan.where(user: current_user)
         else
-            @plans = Plan.all
+            if params[:search]
+                @plans = Plan.where(title: params[:search])
+            else
+                @plans = Plan.all
+            end    
         end
     end
 

@@ -5,11 +5,14 @@ class Offer < ApplicationRecord
     belongs_to :professional
     enum status: {offered: 0, accepted: 1, refused: 2}
   
-    def accepted
-        self.status = 1
+    def accept
+        self.status = "accepted"
+        self.save
     end
 
-    def refuse 
-        self.status = 2
-    end
+
+    #def refuse 
+    #    self.status = 2
+    #    self.save
+    #end
 end

@@ -1,21 +1,23 @@
 <h1>Projetos</h1>
-  
+  <% if professional_signed_in? %>
   <h3>Buscar Projeto</h3>
-  <%= form_tag(plans_path, method: :get) do |f| %>
-  <%= text_field_tag(:search, params[:search]) %>
-  <%= submit_tag("Buscar") %>
+    <%= form_tag(plans_path, method: :get) do |f| %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag("Buscar") %>
+    <% end %>
   <% end %>
 
   <% if @plans.empty? %>
-  <h3> Não há projeto disponível.</h3>
+    <h3> Não há projeto disponível.</h3>
   <% else %>
-  <% @plans.each do |p| %>
-  <h3>Título: <%= p.title  %></h3>
-  <h4>Descrição: <%= p.description =%> </h4>
-  <h4>Habilidades desejadas: <%= p.hability  %></h4>
-  <h4>Data limite: <%= p.limit_date  %></h4>
-  <h4>Atuação: <%= p.presence_type  %></h4>
-  <h4>Valor máximo: <%= p.value  %></h4>
-  <h4><%= link_to "Fazer uma oferta.", new_plan_offer_path(p) %></h4>
+    <% @plans.each do |p| %>
+    <h3>Título: <%= p.title  %></h3>
+    <h4>Descrição: <%= p.description =%> </h4>
+    <h4>Habilidades desejadas: <%= p.hability  %></h4>
+    <h4>Data limite: <%= p.limit_date  %></h4>
+    <h4>Atuação: <%= p.presence_type  %></h4>
+    <h4>Valor máximo: <%= p.value  %></h4>
+    <h4><%= link_to "Fazer uma oferta.", new_plan_offer_path(p) %></h4>
+    <h4><%= link_to "Ver oferta", plan_offers_path(p)%></h4>
   <% end %>
 <% end %>

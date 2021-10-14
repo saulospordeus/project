@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :professionals, controllers: {registrations: "registrations"}
   resources :profiles, only: [:new, :create]
   resources :plans, only: [:index, :new, :create] do
-    resources :offers, only: [:new, :create, :show]
+    resources :offers, only: [:new, :create, :show, :index]
+    post 'offer/:id/accept', to: 'offers#accept', as: "offer_accept"
   end
   devise_for :users
   resources :users, only: [:new, :create]

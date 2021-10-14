@@ -11,7 +11,7 @@ class OffersController < ApplicationController
         if @offer.save
             redirect_to plan_offer_path(id: @offer) #TODO REDIRECT TO @plan
         else
-            redirect_to new_plan_offer_path
+            redirect_to new_plan_offer_path #TODO FLASH ALERT
         end
     end
 
@@ -19,9 +19,20 @@ class OffersController < ApplicationController
         @offer = Offer.find(params[:id])
         @plan = @offer.plan
     end
+
+    def index
+        plan = Plan.find(params[:plan_id])
+        @offers = plan.offers
+    end
+
+    def accept
+        @offer = Offer.find(params[:id])
+        @offer.accept
+        redirect_to plan_offer_path(id: @offer)
+    end
  
     private
-
+   
     def offer_params
       params.require(:offer).permit(:description, :value, :hours, :finish_date)
     end
