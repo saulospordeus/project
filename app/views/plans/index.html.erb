@@ -19,5 +19,8 @@
     <h4>Valor máximo: <%= p.value  %></h4>
     <h4><%= link_to "Fazer uma oferta.", new_plan_offer_path(p) %></h4>
     <h4><%= link_to "Ver oferta", plan_offers_path(p)%></h4>
+    <% if user_signed_in? %>
+      <h4><%= link_to "Avaliar profissional", new_professionals_feedback_path %></h4>
+    <% end %>
   <% end %>
 <% end %>

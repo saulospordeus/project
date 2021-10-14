@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_121058) do
+ActiveRecord::Schema.define(version: 2021_10_14_213139) do
 
   create_table "offers", force: :cascade do |t|
     t.text "description"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 2021_10_14_121058) do
     t.integer "user_id"
     t.string "presence_type"
     t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "professionalfeedbacks", force: :cascade do |t|
+    t.text "text"
+    t.integer "rate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "professional_id"
+    t.integer "user_id"
+    t.index ["professional_id"], name: "index_professionalfeedbacks_on_professional_id"
+    t.index ["user_id"], name: "index_professionalfeedbacks_on_user_id"
   end
 
   create_table "professionals", force: :cascade do |t|
@@ -78,5 +89,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_121058) do
   add_foreign_key "offers", "plans"
   add_foreign_key "offers", "professionals"
   add_foreign_key "plans", "users"
+  add_foreign_key "professionalfeedbacks", "professionals"
+  add_foreign_key "professionalfeedbacks", "users"
   add_foreign_key "profiles", "professionals"
 end
