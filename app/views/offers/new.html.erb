@@ -1,5 +1,5 @@
 
-<%= form_with model: [@plan, @offer] do |f| %>
+<%= form_with(model: @offer, method: :post, url: [@plan, @offer]) do |f| %>
   <%= f.label :description, 'Descrição' %>
   <%= f.text_field :description %>
   <%= f.label :value, 'Valor por hora' %>
