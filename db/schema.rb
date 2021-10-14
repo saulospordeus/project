@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_11_174033) do
+ActiveRecord::Schema.define(version: 2021_10_14_121058) do
+
+  create_table "offers", force: :cascade do |t|
+    t.text "description"
+    t.decimal "value"
+    t.integer "hours"
+    t.date "finish_date"
+    t.integer "status", default: 0
+    t.integer "professional_id"
+    t.integer "plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_offers_on_plan_id"
+    t.index ["professional_id"], name: "index_offers_on_professional_id"
+  end
 
   create_table "plans", force: :cascade do |t|
     t.string "title"
@@ -61,6 +75,8 @@ ActiveRecord::Schema.define(version: 2021_10_11_174033) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "offers", "plans"
+  add_foreign_key "offers", "professionals"
   add_foreign_key "plans", "users"
   add_foreign_key "profiles", "professionals"
 end

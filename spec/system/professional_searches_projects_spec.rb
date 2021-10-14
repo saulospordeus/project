@@ -42,8 +42,7 @@ describe "professional search for projects'" do
         user = User.create!(email: 'user@user.com.br', password: '123456')
         Profile.create!(name: 'John Doe', social_name: 'Jane Doe', background: 'Formada pela Campus Code no programa Treinadev',
         description: 'Sou uma profissional dedicada e criativa', area: 'Desenvolvimento', professional: professional)
-        Plan.create!(title: 'Super Site', description: "Super Site consiste na criação de um site.",
-        hability: 'O profissional que pretende colaborar com o Super Site deve ser pontual e criativo.', 
+        Plan.create!(title: 'Super Site', description: "Super Site consiste na criação de um site.", hability: 'O profissional que pretende colaborar com o Super Site deve ser pontual e criativo.', 
         value: '200', limit_date: '12/10/2221', user: user)
         Plan.create!(title: 'Mega App', description: "Mega App consiste na criação de um app.",
         hability: 'O profissional que pretende colaborar com o Mega App deve ser esforçado e dedicado.', 
