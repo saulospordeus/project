@@ -9,8 +9,9 @@ class ProfilesController < ApplicationController
         @profile = Profile.new(profile_params)
         @profile.professional = current_professional
         if @profile.save
-            redirect_to root_path #TODO REDIRECT TO @profile
+            redirect_to root_path, flash: {alert:"Perfil preenchido"}#
         else
+            flash.now[:alert] = "Perfil não pode ser preenchido"
             render :new
         end
      end

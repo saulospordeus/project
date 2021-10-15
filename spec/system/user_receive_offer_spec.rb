@@ -17,8 +17,8 @@ describe "user" do
         click_on 'Ver oferta'
         
         expect(page).to have_text('Horas: 10')
-        expect(page).to have_text('Data final: 3221-11-13')
-        expect(page).to have_text('Valor por hora: 100.0')
+        expect(page).to have_text('Data final: 13/11/3221')
+        expect(page).to have_text('Valor por hora: $100.00')
         expect(Offer.last.status).to eq('offered')
     end
 
@@ -39,8 +39,8 @@ describe "user" do
         click_on 'Aceitar oferta'
         
         expect(page).to have_text('Horas: 10')
-        expect(page).to have_text('Data final: 3221-11-13')
-        expect(page).to have_text('Valor por hora: 100.0')
+        expect(page).to have_text('Data final: 13/11/3221')
+        expect(page).to have_text('Valor por hora: $100.00')
         expect(Offer.last.status).to eq('accepted')
     end
 
@@ -61,8 +61,8 @@ describe "user" do
         click_on 'Recusar oferta'
         
         expect(page).to have_text('Horas: 10')
-        expect(page).to have_text('Data final: 3221-11-13')
-        expect(page).to have_text('Valor por hora: 100.0')
+        expect(page).to have_text('Data final: 13/11/3221')
+        expect(page).to have_text('Valor por hora: $100.00')
         expect(Offer.last.status).to eq('refused')
     end
    

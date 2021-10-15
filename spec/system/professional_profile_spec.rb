@@ -33,6 +33,7 @@ describe "professional" do
         expect(page).to have_text('Formação: Formada pela Campus Code no curso Treinadev.')
         expect(page).to have_text('Descrição: Sou uma profissional dedicada e criativa.')
         expect(page).to have_text('Área: Desenvolvimento')
+        expect(page).to have_text('Perfil preenchido')
         expect(current_path).to eq(root_path)
     end
     
@@ -51,6 +52,7 @@ describe "professional" do
     #Assert
         expect(page).to_not have_text('Nome social: Jane Doe')
         expect(page).to_not have_text('Formação: Formada pela Campus Code no curso Treinadev.')
+        expect(page).to have_text('Perfil não pode ser preenchido')
         expect(current_path).to eq(profiles_path)
     end
 

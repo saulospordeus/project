@@ -8,6 +8,7 @@ class ProfessionalfeedbacksController < ApplicationController
         @professionalfeedback = Professionalfeedback.new(pfeedback_params)
         @professionalfeedback.professional = professional.find(params[:professional_id])
         if @professionalfeedback.save
+            redirect_to plans_path
             redirect_to root_path
         else
             render :new

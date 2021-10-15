@@ -1,4 +1,8 @@
 class OffersController < ApplicationController
+    
+    before_action :authenticate_professional!, only: [:new, :create]
+    before_action :authenticate_user!, only: [:accept, :refuse]
+
     def new
         @plan = Plan.find(params[:plan_id])
         @offer = Offer.new

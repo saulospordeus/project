@@ -1,4 +1,6 @@
 class Plan < ApplicationRecord
+    validates :title, :value, :description, :limit_date, presence: true
+
     belongs_to :user
     has_many :offers
     has_many :professionals, through: :offers

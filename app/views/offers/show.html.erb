@@ -1,5 +1,5 @@
 
 <p>Projeto: <%= @plan.title %></p>
 <p>Horas: <%= @offer.hours %></p>
-<p>Data final: <%= @offer.finish_date %></p>
-<p>Valor por hora: <%= @offer.value %></p>
+<p>Data final: <%= @offer.finish_date.strftime("%d/%m/%Y") %></p>
+<p>Valor por hora: <%= number_to_currency(@offer.value) %></p>

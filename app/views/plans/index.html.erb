@@ -14,9 +14,9 @@
     <h3>Título: <%= p.title  %></h3>
     <h4>Descrição: <%= p.description =%> </h4>
     <h4>Habilidades desejadas: <%= p.hability  %></h4>
-    <h4>Data limite: <%= p.limit_date  %></h4>
+    <h4>Data limite: <%= p.limit_date.strftime("%d/%m/%Y")  %></h4>
     <h4>Atuação: <%= p.presence_type  %></h4>
-    <h4>Valor máximo: <%= p.value  %></h4>
+    <h4>Valor máximo: <%= number_to_currency(p.value) %></h4>
     <h4><%= link_to "Fazer uma oferta.", new_plan_offer_path(p) %></h4>
     <h4><%= link_to "Ver oferta", plan_offers_path(p)%></h4>
     <% if user_signed_in? %>

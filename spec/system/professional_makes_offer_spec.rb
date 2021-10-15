@@ -21,8 +21,8 @@ describe "professional makes offer" do
         click_on 'Ofertar'
 
         expect(page).to have_text('Projeto: Projeto X')
-        expect(page).to have_text('Valor por hora: 100')
-        expect(page).to have_text('Data final: 2221-10-12')
+        expect(page).to have_text('Valor por hora: $100.00')
+        expect(page).to have_text('Data final: 12/10/2221')
         expect(page).to have_text('Horas: 10')
         expect(Offer.last.status).to eq('offered')
     end
