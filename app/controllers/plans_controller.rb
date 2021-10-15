@@ -3,10 +3,10 @@ class PlansController < ApplicationController
     before_action :authenticate, only: [:new, :create, :index]
     
     def index
-        if user_signed_in?
+        if user_signed_in? #projetista
             @plans = Plan.where(user: current_user)
         else
-            if params[:search]
+            if params[:search] #profissional/freelancer
                 open_plans = Plan.where(status: "open")
                 @plans = open_plans.where(title: params[:search])
             else
