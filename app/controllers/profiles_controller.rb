@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
 
+    before_action :authenticate_professional!, only: [:new, :create]
    
+    def show
+        @profile = Profile.find(params[:id])
+    end
+
     def new
         @profile = Profile.new
     end
@@ -15,6 +20,7 @@ class ProfilesController < ApplicationController
             render :new
         end
      end
+     
      private
 
     def profile_params

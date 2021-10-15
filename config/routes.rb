@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :professionals, only:[:index] do
     resources :professionalfeedbacks, only: [:new, :create], as: "feedback"
   end
-  resources :profiles, only: [:new, :create]
+  resources :profiles, only: [:new, :create, :show]
   resources :plans, only: [:index, :new, :create] do
     resources :offers, only: [:new, :create, :show, :index]
     post 'offer/:id/accept', to: 'offers#accept', as: "offer_accept"

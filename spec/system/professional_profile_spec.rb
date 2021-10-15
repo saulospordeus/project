@@ -64,6 +64,15 @@ describe "professional" do
             visit root_path
         #Assert
         expect(page).to have_text("Preencha seu perfil")
-        end
+    end
+
+    it 'must be logged to create profile' do
+        #Arrange
+            professional = Professional.create!(email: 'jane@doe.com.br', password: '123456')
+        #Act
+            visit new_profile_path
+        #Assert
+        expect(page).to have_text("You need to sign in or sign up before continuing.")
+    end
 
 end
