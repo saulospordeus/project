@@ -24,6 +24,7 @@ describe "professional makes offer" do
         expect(page).to have_text('Valor por hora: $100.00')
         expect(page).to have_text('Data final: 12/10/2221')
         expect(page).to have_text('Horas: 10')
+        expect(page).to have_text('Oferta realizada')
         expect(Offer.last.status).to eq('offered')
     end
 
@@ -42,6 +43,7 @@ describe "professional makes offer" do
         click_on 'Ofertar'
 
         expect(page).not_to have_text('Projeto: Projeto X')
+        expect(page).to have_text('Oferta não pode ser realizada')
         expect(current_path).to eq(new_plan_offer_path(plan))
 
         #TODO EXPECT FLASH ALERT
