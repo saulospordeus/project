@@ -1,6 +1,6 @@
-class CreateProfessionalfeedbacks < ActiveRecord::Migration[6.1]
+class CreateProfessionalFeedbacks < ActiveRecord::Migration[6.1]
   def change
-    create_table :professionalfeedbacks do |t|
+    create_table :professional_feedbacks do |t|
       t.text :text
       t.integer :rate
       t.belongs_to :professional, foreign_key: true

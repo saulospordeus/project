@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_213139) do
+ActiveRecord::Schema.define(version: 2021_10_15_190553) do
 
   create_table "offers", force: :cascade do |t|
     t.text "description"
@@ -36,7 +36,19 @@ ActiveRecord::Schema.define(version: 2021_10_14_213139) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.string "presence_type"
+    t.integer "status", default: 0
     t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "professional_feedbacks", force: :cascade do |t|
+    t.text "text"
+    t.integer "rate"
+    t.integer "professional_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professional_id"], name: "index_professional_feedbacks_on_professional_id"
+    t.index ["user_id"], name: "index_professional_feedbacks_on_user_id"
   end
 
   create_table "professionalfeedbacks", force: :cascade do |t|
@@ -89,6 +101,8 @@ ActiveRecord::Schema.define(version: 2021_10_14_213139) do
   add_foreign_key "offers", "plans"
   add_foreign_key "offers", "professionals"
   add_foreign_key "plans", "users"
+  add_foreign_key "professional_feedbacks", "professionals"
+  add_foreign_key "professional_feedbacks", "users"
   add_foreign_key "professionalfeedbacks", "professionals"
   add_foreign_key "professionalfeedbacks", "users"
   add_foreign_key "profiles", "professionals"

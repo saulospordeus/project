@@ -4,3 +4,9 @@
 <p>Área: <%= @profile.area %></p>
 <p>Descrição: <%= @profile.description %></p>
 
+<h1>Projetos que participou:</h1>
+<% @plans.each do |plan|%>
+    <%= plan.title%>
+<% end %>
+
+

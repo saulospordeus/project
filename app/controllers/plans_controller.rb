@@ -7,9 +7,10 @@ class PlansController < ApplicationController
             @plans = Plan.where(user: current_user)
         else
             if params[:search]
-                @plans = Plan.where(title: params[:search])
+                open_plans = Plan.where(status: "open")
+                @plans = open_plans.where(title: params[:search])
             else
-                @plans = Plan.all
+                @plans = Plan.where(status: "open")
             end    
         end
     end
@@ -28,6 +29,13 @@ class PlansController < ApplicationController
             render :new
         end
     end
+
+    def close
+        @plan = Plan.find(params[:id])
+        @plan.close
+        redirect_to plans_path, flash: {alert:"Projeto Fechado"}
+    end
+
      private
 
      def plan_params

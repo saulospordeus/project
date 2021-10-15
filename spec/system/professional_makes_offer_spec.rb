@@ -48,4 +48,26 @@ describe "professional makes offer" do
 
         #TODO EXPECT FLASH ALERT
     end
+    
+    it 'cant makes an offer to closed plan' do
+        professional = Professional.create!(email: 'jane@doe.com.br', password: '123456')
+        user = User.create!(email: 'user@user.com.br', password: '123456')
+        Profile.create!(name: 'John Doe', social_name: 'Jane Doe', background: 'Formada pela Campus Code no programa Treinadev',
+        description: 'Sou uma profissional dedicada e criativa', area: 'Desenvolvimento', professional: professional)
+        plan = Plan.create!(title: 'Projeto X', description: "Projeto X consiste na criação de um site.",
+        hability: 'O profissional que pretende colaborar com o Projeto X deve ser pontual e criativo.', 
+        value: '200', limit_date: '12/10/2221', user: user)
+        plan2 = Plan.create!(title: 'Projeto Y', description: "Projeto Y consiste na criação de um app.",
+        hability: 'O profissional que pretende colaborar com o Projeto Y deve ser paciente e inteligente.', 
+        value: '300', limit_date: '14/10/2221', user: user, status: 'closed')
+        
+        login_as professional, scope: :professional
+        visit plans_path
+        expect(page).to have_text('Projeto X')
+        expect(page).to have_text('Projeto X consiste na criação de um site.')
+        expect(page).not_to have_text('Projeto Y')
+        expect(page).not_to have_text('Projeto Y consiste na criação de um app')
+
+    end
+
 end

@@ -4,6 +4,8 @@ class ProfilesController < ApplicationController
    
     def show
         @profile = Profile.find(params[:id])
+        @professional = @profile.professional
+        @plans = @professional.plans
     end
 
     def new

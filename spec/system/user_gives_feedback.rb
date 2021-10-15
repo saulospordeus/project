@@ -1,7 +1,7 @@
 require 'rails_helper'
     
 describe "user" do 
-    it 'successfully view an offer' do
+    it 'successfully gives feedback' do
         user = User.create!(email: 'user@user.com.br', password: '123456')
         professional = Professional.create!(email: 'jane@doe.com.br', password: '123456')
         Profile.create!(name: 'John Doe', social_name: 'Jane Doe', background: 'Formada pela Campus Code no programa Treinadev',
@@ -9,7 +9,7 @@ describe "user" do
         plan = Plan.create!(title: 'Projeto X', description: "Projeto X consiste na criação de um site.",
                         hability: 'O profissional que pretende colaborar com o Projeto X deve ser pontual e criativo.', 
                         value: '200', limit_date: '12/10/2221', user: user)
-        
+                
         login_as user, scope: :user
 
         visit plans_path

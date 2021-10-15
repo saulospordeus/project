@@ -1,5 +1,5 @@
 
-<%= form_with(model: @professionalfeedback, method: :post, url: [@professional, professionals_feedback_index_path]) do |f| %>
+<%= form_with(model: @professionalfeedback, method: :post, url: [@professional, @professionalfeedback]) do |f| %>
   <%= f.label :text, 'Texto' %>
   <%= f.text_field :text %>
   <%= f.label :rate, 'Nota' %>
