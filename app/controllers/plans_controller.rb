@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
 
     before_action :authenticate, only: [:new, :create, :index]
+    before_action :authenticate_user!, only: [:delete]
     
     def index
         if user_signed_in? #projetista
@@ -28,6 +29,12 @@ class PlansController < ApplicationController
             flash.now[:alert] = "Projeto não pode ser criado"
             render :new
         end
+    end
+
+    def destroy
+        @plan = Plan.find(params[:id])
+        @plan.destroy
+        redirect_to plans_path, flash: {alert:"Projeto deletado"}
     end
 
     def close

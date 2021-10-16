@@ -23,6 +23,7 @@
     <% else %>
       <h4><%= link_to "Ver oferta", plan_offers_path(p)%></h4>
       <h4><%= button_to "Fechar projeto", close_plan_path(p)%></h4>
+      <h4><%= button_to "Deletar projeto", plan_path(p), method: :delete%></h4>
     <% end %> 
   <% end %>
 <% end %>

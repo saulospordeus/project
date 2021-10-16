@@ -29,6 +29,12 @@ class OffersController < ApplicationController
         @offers = plan.offers
     end
 
+    def destroy
+        @offer = Offer.find(params[:id])
+        @offer.destroy
+        redirect_to plans_path, flash: {alert:"Oferta deletada"}
+    end
+    
     def accept
         @offer = Offer.find(params[:id])
         @offer.accept
