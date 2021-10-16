@@ -1,0 +1,14 @@
+<h1>Edite seu perfil</h1>
+<%= form_with(model: @profile) do |f| %>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+    <%= f.label :social_name, 'Nome Social' %>
+    <%= f.text_field :social_name %>
+    <%= f.label :background, 'Formação' %>
+    <%= f.text_field :background %>
+    <%= f.label :description, 'Descrição' %>
+    <%= f.text_field :description %>
+    <%= f.label :area, 'Área' %>
+    <%= f.text_field :area %>
+  <%= f.submit 'Enviar' %>
+<% end %>

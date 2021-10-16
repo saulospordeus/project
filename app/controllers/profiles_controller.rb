@@ -22,6 +22,20 @@ class ProfilesController < ApplicationController
             render :new
         end
      end
+
+     def edit
+        @profile = Profile.find(params[:id])
+     end
+
+     def update
+        @profile = Profile.find(params[:id])
+        if @profile.update(profile_params)
+            redirect_to root_path, notice: "Perfil editado com sucesso"
+            else
+            flash.now[:alert] = "Perfil não foi editado"
+            render :edit # ver se isso vai dar certo
+        end
+     end
      
      private
 
