@@ -22,8 +22,8 @@ describe "professional" do
     #Act
         login_as professional, scope: :professional
         visit new_profile_path
-        fill_in 'Nome', with: 'John Doe'
-        fill_in 'Nome Social', with: 'Jane Doe'
+        fill_in 'Nome:', with: 'John Doe'
+        fill_in 'Nome Social:', with: 'Jane Doe'
         fill_in 'Formação', with: 'Formada pela Campus Code no curso Treinadev.'
         fill_in 'Descrição', with: 'Sou uma profissional dedicada e criativa.'
         fill_in 'Área', with: 'Desenvolvimento'
@@ -43,7 +43,7 @@ describe "professional" do
     #Act
         login_as professional, scope: :professional
         visit new_profile_path
-        fill_in 'Nome', with: 'John Doe'
+        fill_in 'Nome:', with: 'John Doe'
         fill_in 'Nome Social', with: ''
         fill_in 'Formação', with: 'Formada pela Campus Code no curso Treinadev.'
         fill_in 'Descrição', with: 'Sou uma profissional dedicada e criativa.'
@@ -85,8 +85,8 @@ describe "professional" do
             visit root_path
             click_on "Editar meu perfil"
 
-            fill_in 'Nome', with: 'John Doe'
-            fill_in 'Nome Social', with: 'Jane Doe'
+            fill_in 'Nome:', with: 'John Doe'
+            fill_in 'Nome Social:', with: 'Jane Doe'
             fill_in 'Formação', with: 'Formada pela Universidade Federal da Paraíba.'
             fill_in 'Descrição', with: 'Sou uma profissional entusiasmada e esforçada.'
             fill_in 'Área', with: 'Infraestrutura de Redes'
@@ -113,7 +113,7 @@ describe "professional" do
             visit root_path
             click_on "Editar meu perfil"
 
-            fill_in 'Nome', with: 'John Doe'
+            fill_in 'Nome:', with: 'John Doe'
             fill_in 'Nome Social', with: 'Jane Doe'
             fill_in 'Formação', with: 'Formada pela Universidade Federal da Paraíba.'
             fill_in 'Descrição', with: 'Sou uma profissional entusiasmada e esforçada.'
@@ -140,7 +140,7 @@ describe "professional" do
         login_as professional, scope: :professional
         visit root_path
         click_on "Editar meu perfil"
-         fill_in 'Nome', with: 'John Doe'
+        fill_in 'Nome:', with: 'John Doe'
         fill_in 'Nome Social', with: 'Jane Doe'
         fill_in 'Formação', with: ''
         fill_in 'Descrição', with: 'Sou uma profissional entusiasmada e esforçada.'

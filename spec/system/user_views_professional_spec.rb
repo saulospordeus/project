@@ -20,7 +20,7 @@ describe "user" do
         expect(page).to have_text('Formação: Formada pela Campus Code no programa Treinadev')
         expect(page).to have_text('Descrição: Sou uma profissional dedicada e criativa')
         expect(page).to have_text('Área: Desenvolvimento')
-        expect(page).to have_text('Projetos que participou:')
+        expect(page).to have_text('Projetos que participou ou fez oferta:')
         expect(page).to have_text('Projeto X')
     end
 

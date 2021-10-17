@@ -1,13 +1,17 @@
-<% @offers.each do |offer| %>
-  <p><%= offer.professional.profile.social_name %></p>
-  <p><%= link_to "Ver perfil", profile_path(offer.professional.profile) %></p>
-  <p><%= offer.description %></p>
-  <p>Horas: <%= offer.hours %></p>
-  <p>Data final: <%= offer.finish_date.strftime("%d/%m/%Y") %></p>
-  <p>Valor por hora: <%= number_to_currency(offer.value) %></p>
-  <p><%= button_to "Aceitar oferta", plan_offer_accept_path(id: offer.id)%> </p>
-  <p><%= button_to "Recusar oferta", plan_offer_refuse_path(id: offer.id)%> </p>
-  <% if professional_signed_in? %></p>
-    <p><%= button_to "Deletar oferta", plan_offer_path(id: offer.id), method: :delete %></p>
-  <p><% end %></p>
+<% if @offers.empty? %>
+    <p>Não há ofertas</p>
+  <% else %>
+  <% @offers.each do |offer| %>
+    <p><%= offer.professional.profile.social_name %></p>
+    <p><%= link_to "Ver perfil", profile_path(offer.professional.profile) %></p>
+    <p><%= offer.description %></p>
+    <p>Horas: <%= offer.hours %></p>
+    <p>Data final: <%= offer.finish_date.strftime("%d/%m/%Y") %></p>
+    <p>Valor por hora: <%= number_to_currency(offer.value) %></p>
+    <p><%= button_to "Aceitar oferta", plan_offer_accept_path(id: offer.id)%> </p>
+    <p><%= button_to "Recusar oferta", plan_offer_refuse_path(id: offer.id)%> </p>
+    <% if professional_signed_in? %></p>
+      <p><%= button_to "Deletar oferta", plan_offer_path(id: offer.id), method: :delete %></p>
+    <p><% end %></p>
+  <% end %>
 <% end %>

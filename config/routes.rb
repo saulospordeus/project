@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post 'offer/:id/refuse', to: 'offers#refuse', as: "offer_refuse"
   end
   post 'plan/:id/close', to: 'plans#close', as: "close_plan"
-  devise_for :users
+  post 'plan/:id/open', to: 'plans#open', as: "open_plan"
+    devise_for :users
   resources :users, only: [:new, :create]
 end

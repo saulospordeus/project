@@ -40,7 +40,13 @@ class PlansController < ApplicationController
     def close
         @plan = Plan.find(params[:id])
         @plan.close
-        redirect_to plans_path, flash: {alert:"Projeto Fechado"}
+        redirect_to plans_path, flash: {alert:"Projeto fechado"}
+    end
+
+    def open
+        @plan = Plan.find(params[:id])
+        @plan.open
+        redirect_to plans_path, flash: {alert:"Projeto aberto"}
     end
 
      private

@@ -23,7 +23,7 @@
     <p><%= notice %></p>
     <p><%= alert %></p>
   <% end %>
-  <% flash.each do |msg| %>
+  <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
   </div>
