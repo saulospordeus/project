@@ -47,7 +47,6 @@ describe "professional" do
         expect(page).to have_text('Oferta não pode ser realizada')
         expect(current_path).to eq(new_plan_offer_path(plan))
 
-        #TODO EXPECT FLASH ALERT
     end
     
     it 'cant makes an offer to closed plan' do
@@ -89,7 +88,7 @@ describe "professional" do
         expect(Offer.count).to eq(0)
     end
 
-    it 'sees his offer in a project' do
+    it 'sees his offers in a project' do
             
             professional = Professional.create!(email: 'jane@doe.com.br', password: '123456')
             professional2 = Professional.create!(email: 'peter@parker.com.br', password: '123456')
@@ -117,6 +116,7 @@ describe "professional" do
             expect(page).to have_text("Valor: $100.00")
             expect(page).to have_text("Horas: 10")
             expect(page).to have_text("Data final: 13/11/3221")
+            expect(page).to have_text("Status: oferecida")
             expect(page).not_to have_text("Estou interessado em participar")
             expect(page).not_to have_text("Valor: $200.00")
             expect(page).not_to have_text("Horas: 20")
