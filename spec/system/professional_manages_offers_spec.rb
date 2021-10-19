@@ -25,7 +25,7 @@ describe "professional" do
         expect(page).to have_text('Data final: 12/10/2221')
         expect(page).to have_text('Horas: 10')
         expect(page).to have_text('Oferta realizada')
-        expect(Offer.last.status).to eq('offered')
+        expect(Offer.last.status).to eq('oferecida')
         expect(page).to have_button('Voltar')
     end
 
