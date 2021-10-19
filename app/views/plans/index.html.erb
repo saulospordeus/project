@@ -23,7 +23,7 @@
       <h4><%= link_to "Fazer uma oferta.", new_plan_offer_path(p) %></h4>
     <% else %>
       <h4><%= link_to "Ver ofertas", plan_offers_path(p)%></h4>
-      <% if p.status == "open" %>
+      <% if p.status == "aberto" %>
         <h4><%= button_to "Fechar projeto", close_plan_path(p)%></h4>
         <% else %>
       <h4><%= button_to "Abrir projeto", open_plan_path(p)%></h4>

@@ -52,7 +52,7 @@ describe "User" do
         visit plans_path
         click_on 'Fechar projeto'
         
-        expect(Plan.last.status).to eq('closed')
+        expect(Plan.last.status).to eq('fechado')
         expect(page).to have_text('Projeto fechado')
         expect(page).to have_button('Voltar')
     end
@@ -64,7 +64,7 @@ describe "User" do
                         description: 'Sou uma profissional dedicada e criativa', area: 'Desenvolvimento', professional: professional)
         plan = Plan.create!(title: 'Projeto X', description: "Projeto X consiste na criação de um site.",
                         hability: 'O profissional que pretende colaborar com o Projeto X deve ser pontual e criativo.', 
-                        value: '200', limit_date: '12/10/2221', user: user, status:'closed')
+                        value: '200', limit_date: '12/10/2221', user: user, status:'fechado')
         offer = Offer.create!(description: "Estou preparado para tocar esse projeto", professional: professional, value: "100", 
                         hours: '10', finish_date:'13/11/3221' , plan: plan)
         
@@ -72,7 +72,7 @@ describe "User" do
         visit plans_path
         click_on 'Abrir projeto'
         
-        expect(Plan.last.status).to eq('open')
+        expect(Plan.last.status).to eq('aberto')
         expect(page).to have_text('Projeto aberto')
     end
 

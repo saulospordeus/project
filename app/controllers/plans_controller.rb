@@ -9,10 +9,10 @@ class PlansController < ApplicationController
             @plans = Plan.where(user: current_user)
         else
             if params[:search] #profissional/freelancer
-                open_plans = Plan.where(status: "open")
+                open_plans = Plan.where(status: "aberto")
                 @plans = open_plans.where(title: params[:search])
             else
-                @plans = Plan.where(status: "open")
+                @plans = Plan.where(status: "aberto")
             end    
         end
     end

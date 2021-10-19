@@ -7,15 +7,15 @@ class Plan < ApplicationRecord
     belongs_to :user
     has_many :offers, dependent: :destroy
     has_many :professionals, through: :offers
-    enum status: {open: 0, closed: 1}
+    enum status: {aberto: 0, fechado: 1}
     
     def close
-        self.status = "closed"
+        self.status = "fechado"
         self.save
     end
     
     def open
-        self.status = "open"
+        self.status = "aberto"
         self.save
     end
 end
