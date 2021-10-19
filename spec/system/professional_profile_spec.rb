@@ -131,4 +131,5 @@ describe "professional" do
         expect(current_path).not_to eq(root_path)
     end
 
+    
 end

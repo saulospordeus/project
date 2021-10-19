@@ -1,13 +1,16 @@
-<h1>Perfil: </h1>
+<h2>Perfil: </h4>
 <p>Nome: <%= @profile.social_name %></p>
 <p>Formação: <%= @profile.background %></p>
 <p>Área: <%= @profile.area %></p>
 <p>Descrição: <%= @profile.description %></p>
 
-<h1>Projetos que participou ou fez oferta:</h1>
+<h2>Projetos que participou ou fez oferta:</h3>
+<% if @plans.empty? %>
+    <p>Nenhum projeto disponível.</p>
+<% end %>
 <% @plans.each do |plan|%>
-    <%= plan.title%>
+    <h4><%= link_to plan.title, plan_path %> </h4>
+    <p><%= plan.description%></p>
 <% end %>
 <input type="button" value="Voltar" onClick="history.go(-1)"> 
-
 

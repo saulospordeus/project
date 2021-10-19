@@ -1,14 +1,14 @@
 <h1>Preencha seu perfil</h1>
 <%= form_with(model: @profile) do |f| %>
-  <p><%= f.label :name, 'Nome:' %></p>
+  <h4><%= f.label :name, 'Nome:' %></h4>
   <p><%= f.text_field :name %></p>
-  <p><%= f.label :social_name, 'Nome Social:' %></p>
+  <h4><%= f.label :social_name, 'Nome Social:' %></h4>
   <p><%= f.text_field :social_name %></p>
-  <p><%= f.label :background, 'Formação:' %></p>
+  <h4><%= f.label :background, 'Formação:' %></h4>
   <p><%= f.text_field :background %></p>
-  <p><%= f.label :description, 'Descrição:' %></p>
+  <h4><%= f.label :description, 'Descrição:' %></h4>
   <p><%= f.text_field :description %></p>
-  <p><%= f.label :area, 'Área:' %></p>
+  <h4><%= f.label :area, 'Área:' %></h4>
   <p><%= f.text_field :area %></p>
   <p><%= f.submit 'Enviar' %></p>
 <% end %>

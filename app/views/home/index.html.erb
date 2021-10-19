@@ -1,24 +1,25 @@
 <h1>P&P</h1>
 <h2>Bem vindo ao sistema que aproxima pessoas de projetos</h3>
 <% if user_signed_in? %>
-  <h3><%= link_to "Ver seus projetos", plans_path%></h3>
-  <h3><%= link_to "Cadastrar projeto", new_plan_path%></h3>
+  <p><%= link_to "Ver seus projetos", plans_path%></p>
+  <p><%= link_to "Cadastrar projeto", new_plan_path%></p>
 <% elsif professional_signed_in? %>
   <% if current_professional.profile %>
-    <h3>Nome: <%= current_professional.profile.social_name %></h3>
-    <h3>Formação: <%= current_professional.profile.background %></h3>
-    <h3>Descrição: <%= current_professional.profile.description %></h3>
-    <h3>Área: <%= current_professional.profile.area %></h3>
-    <h3><%= link_to "Ver projetos", plans_path%></h3>
-    <h3><%= link_to "Editar meu perfil", edit_profile_path(current_professional.profile) %></h3>
-  <% else %>
-     <h3><%= link_to "Preencha seu perfil", new_profile_path %></h3>
+    <p>Nome: <%= current_professional.profile.social_name %></p>
+    <p>Formação: <%= current_professional.profile.background %></p>
+    <p>Descrição: <%= current_professional.profile.description %></p>
+    <p>Área: <%= current_professional.profile.area %></p>
+    <h4><%= link_to "Ver projetos", plans_path%></h4>
+    <h4><%= link_to "Ver meu perfil",  profile_path(current_professional.profile) %></h4>
+    <h4><%= link_to "Editar meu perfil", edit_profile_path(current_professional.profile) %></h4>
+    <% else %>
+     <h4><%= link_to "Preencha seu perfil", new_profile_path %></h4>
   <% end %>
 <% else %>
   <h2>Registrar-me:</h2>
-    <h3><%=link_to 'Sign in: como dono de um projeto!', new_user_session_path %></h3>
-    <h3><%=link_to 'Sign in: como profissional!',  new_professional_session_path %></h3>
+    <h4><%=link_to 'Sign in: como dono de um projeto!', new_user_session_path %></h4>
+    <h4><%=link_to 'Sign in: como profissional!',  new_professional_session_path %></h4>
   <h2>Registrar-me:</h2>
-    <h3><%= link_to 'Procuro pessoas para meu projeto!', new_user_registration_path %> </h3>
-    <h3><%= link_to 'Procuro projetos para mim!', new_professional_registration_path %> </h3>
+    <h4><%= link_to 'Procuro pessoas para meu projeto!', new_user_registration_path %> </h4>
+    <h4><%= link_to 'Procuro projetos para mim!', new_professional_registration_path %> </h4>
 <% end %>

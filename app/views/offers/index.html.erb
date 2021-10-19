@@ -2,8 +2,8 @@
     <p>Não há ofertas</p>
   <% else %>
   <% @offers.each do |offer| %>
-    <p><%= offer.professional.profile.social_name %></p>
-    <p><%= link_to "Ver perfil", profile_path(offer.professional.profile) %></p>
+    <h2><%= offer.professional.profile.social_name %></h2>
+    <h4><%= link_to "Ver perfil", profile_path(offer.professional.profile) %></h4>
     <p><%= offer.description %></p>
     <p>Horas: <%= offer.hours %></p>
     <p>Data final: <%= offer.finish_date.strftime("%d/%m/%Y") %></p>

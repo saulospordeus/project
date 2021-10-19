@@ -1,15 +1,15 @@
 <%= form_with(model: @plan) do |f| %>
-  <p><%= f.label :title, 'Título:' %></p>
+  <h4><%= f.label :title, 'Título:' %></h4>
   <p><%= f.text_field :title %></p>
-  <p><%= f.label :description, 'Descrição:' %></p>
+  <h4><%= f.label :description, 'Descrição:' %></h4>
   <p><%= f.text_field :description %></p>
-  <p><%= f.label :hability, 'Habilidades desejadas:' %></p>
+  <h4><%= f.label :hability, 'Habilidades desejadas:' %></h4>
   <p><%= f.text_field :hability %></p>
-  <p><%= f.label :value, 'Valor máximo:' %></p>
+  <h4><%= f.label :value, 'Valor máximo:' %></h4>
   <p><%= f.text_field :value %></p>
-  <p><%= f.label :limit_date, 'Data limite:' %></p>
+  <h4><%= f.label :limit_date, 'Data limite:' %></h4>
   <p><%= f.date_field :limit_date %></p>
-  <p><%= f.label :presence_type, "Atuação:" %></p>
+  <h4><%= f.label :presence_type, "Atuação:" %></h4>
   <p><%= f.select :presence_type, ["Remota", "Presencial"] %>  </p>
   <p><%= f.submit 'Cadastrar' %></p>
 <% end %>

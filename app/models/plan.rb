@@ -1,5 +1,8 @@
 class Plan < ApplicationRecord
     validates :title, :value, :description, :limit_date, presence: true
+    
+#    scope :accepted, -> { where(status: 'accepted') }
+  #  scope :from_professional, -> {where(professional: professional)}
 
     belongs_to :user
     has_many :offers, dependent: :destroy

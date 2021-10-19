@@ -1,7 +1,7 @@
 class Offer < ApplicationRecord
     validates :description, :value, :hours, :finish_date, presence: true
-    scope :accepted, -> { where(status: 'accepted') }
-    scope :accepted_from_professional, -> (professional) { accepted.where(professional: professional) }
+#    scope :accepted, -> { where(status: 'accepted') }
+#    scope :accepted_from_professional, -> (professional) { accepted.where(professional: professional) }
 
     belongs_to :plan
     belongs_to :professional

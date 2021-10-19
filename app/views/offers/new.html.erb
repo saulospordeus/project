@@ -1,12 +1,12 @@
 
 <%= form_with(model: @offer, method: :post, url: [@plan, @offer]) do |f| %>
-  <p><%= f.label :description, 'Descrição:' %></p>
+  <h4><%= f.label :description, 'Descrição:' %></h4>
   <p><%= f.text_field :description %></p>
-  <p><%= f.label :value, 'Valor por hora:' %></p>
+  <h4><%= f.label :value, 'Valor por hora:' %></h4>
   <p><%= f.text_field :value %></p>
-  <p><%= f.label :hours, 'Horas:' %></p>
+  <h4><%= f.label :hours, 'Horas:' %></h4>
   <p><%= f.text_field :hours %></p>
-  <p><%= f.label :finish_date, 'Data final:' %></p>
+  <h4><%= f.label :finish_date, 'Data final:' %></h4>
   <p><%= f.date_field :finish_date %>  </p>
   <p><%= f.submit 'Ofertar' %></p>
 <% end %>

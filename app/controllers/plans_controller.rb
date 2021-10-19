@@ -2,6 +2,7 @@ class PlansController < ApplicationController
 
     before_action :authenticate, only: [:new, :create, :index]
     before_action :authenticate_user!, only: [:delete]
+    before_action :authenticate_professional!, only: [:my_plans]
     
     def index
         if user_signed_in? #projetista
@@ -14,6 +15,12 @@ class PlansController < ApplicationController
                 @plans = Plan.where(status: "open")
             end    
         end
+    end
+
+    def show
+        @plan = Plan.find(params[:id])
+        @offers = @plan.offers
+        @myoffers = @offers.where(professional: current_professional)
     end
 
     def new
