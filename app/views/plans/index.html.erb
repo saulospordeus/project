@@ -1,4 +1,5 @@
 <h1>Projetos</h1>
+
   <% if professional_signed_in? %>
   <h3>Buscar Projeto</h3>
     <%= form_tag(plans_path, method: :get) do |f| %>
@@ -31,3 +32,4 @@
     <% end %> 
   <% end %>
 <% end %>
+<input type="button" value="Voltar" onClick="history.go(-1)"> 

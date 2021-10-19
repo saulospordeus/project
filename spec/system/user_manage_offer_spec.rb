@@ -22,6 +22,7 @@ describe "user" do
         expect(page).to have_text('Valor por hora: $100.00')
         expect(page).to have_text('Estou preparado para tocar esse projeto')
         expect(Offer.last.status).to eq('offered')
+        expect(page).to have_button('Voltar')
     end
 
     it 'accepts an offer' do
@@ -44,6 +45,7 @@ describe "user" do
         expect(page).to have_text('Data final: 13/11/3221')
         expect(page).to have_text('Valor por hora: $100.00')
         expect(Offer.last.status).to eq('accepted')
+        expect(page).to have_button('Voltar')
     end
 
     it 'refuses an offer' do
@@ -66,6 +68,7 @@ describe "user" do
         expect(page).to have_text('Data final: 13/11/3221')
         expect(page).to have_text('Valor por hora: $100.00')
         expect(Offer.last.status).to eq('refused')
+        expect(page).to have_button('Voltar')
     end
 
     it 'sees no offer' do
@@ -82,6 +85,7 @@ describe "user" do
         click_on 'Ver ofertas'
         
         expect(page).to have_text('Não há ofertas')
+        expect(page).to have_button('Voltar')
     end
 
 end

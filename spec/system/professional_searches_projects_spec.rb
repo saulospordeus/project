@@ -22,6 +22,7 @@ describe "professional search for projects'" do
         expect(page).to have_text('Projeto X consiste na criação de um site.')
         expect(page).to have_text('Projeto Z')
         expect(page).to have_text('Projeto Z consiste na criação de um app.')
+        expect(page).to have_button('Voltar')
     end
 
     it "doesn't have project available" do
@@ -34,6 +35,7 @@ describe "professional search for projects'" do
         click_on 'Ver projetos'
 
         expect(page).to have_text('Não há projeto disponível')
+        expect(page).to have_button('Voltar')
     end
     
     it 'successfuly searches' do
@@ -59,6 +61,7 @@ describe "professional search for projects'" do
         expect(page).not_to have_text('Super Site consiste na criação de um site.')
         expect(page).to have_text('Mega App')
         expect(page).to have_text('Mega App consiste na criação de um app.')
+        expect(page).to have_button('Voltar')
     end
 end
   

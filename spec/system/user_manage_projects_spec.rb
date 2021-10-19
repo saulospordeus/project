@@ -21,6 +21,7 @@ describe "User" do
         expect(page).to have_text('Projeto Z')
         expect(page).to have_text('Projeto Z consiste na criação de um app.')
         expect(current_path).to eq(plans_path)
+        expect(page).to have_button('Voltar')
     end
 
     it 'sees no project' do
@@ -33,6 +34,7 @@ describe "User" do
         expect(page).to have_text('jane@doe.com.br')
         expect(page).to have_text('Não há projeto disponível.')
         expect(current_path).to eq(plans_path)
+        expect(page).to have_button('Voltar')
     end
 
     it 'closes a plan' do
@@ -52,6 +54,7 @@ describe "User" do
         
         expect(Plan.last.status).to eq('closed')
         expect(page).to have_text('Projeto fechado')
+        expect(page).to have_button('Voltar')
     end
 
     it 'opens a plan' do
@@ -95,6 +98,7 @@ describe "User" do
         expect(page).not_to have_text('12/10/2221')
         expect(page).to have_text('Projeto deletado')
         expect(Plan.count).to eq(0)
+        expect(page).to have_button('Voltar')
     end
 
 

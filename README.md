@@ -8,15 +8,6 @@
 
 <p  align="center">Esta é uma plataforma web que permite os seus usuários contratarem e fornecerem serviços relacionados à tecnologia da informação</p>
 
-  
-
-https://img.shields.io/github/issues/saulospordeus/project
-
-https://img.shields.io/github/forks/saulospordeus/project
-
-https://img.shields.io/github/stars/saulospordeus/project
-
-  
 
 <h4  align="center">
 
@@ -45,6 +36,8 @@ https://img.shields.io/github/stars/saulospordeus/project
 -  [x] Abertura e fechamento do projeto
 
 - [ ] Feedback do profissional e usuário
+
+- [ ] Marcar profissional com favorito
 
   
 

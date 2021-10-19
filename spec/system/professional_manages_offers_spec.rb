@@ -26,6 +26,7 @@ describe "professional" do
         expect(page).to have_text('Horas: 10')
         expect(page).to have_text('Oferta realizada')
         expect(Offer.last.status).to eq('offered')
+        expect(page).to have_button('Voltar')
     end
 
     it 'must fill all fields' do

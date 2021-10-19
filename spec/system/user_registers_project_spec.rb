@@ -25,6 +25,7 @@ describe "User register project" do
     expect(page).to have_text('Projeto criado') #TODO FORMATO DINHEIRO
      #TODO FORMATO DINHEIRO
     expect(current_path).to eq(plans_path)
+    expect(page).to have_button('Voltar')
     end
 
         it 'must fill all fields' do

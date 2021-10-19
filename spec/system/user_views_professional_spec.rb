@@ -22,6 +22,7 @@ describe "user" do
         expect(page).to have_text('Área: Desenvolvimento')
         expect(page).to have_text('Projetos que participou ou fez oferta:')
         expect(page).to have_text('Projeto X')
+        expect(page).to have_button('Voltar')
     end
 
        
