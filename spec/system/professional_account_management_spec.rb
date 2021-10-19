@@ -9,8 +9,7 @@ describe "Account Management" do
             fill_in 'Password', with: '123456'
             fill_in 'Password confirmation', with: '123456'
             click_on 'Sign up'
-#TODO TRADUZIR
-#TODO FLASH MENSAGEM
+
             expect(page).to have_text('jane@doe.com.br')
             expect(current_path).to eq(new_profile_path)
             expect(page).to have_link('Logout')
@@ -24,8 +23,7 @@ describe "Account Management" do
             fill_in 'Password', with: '123456'
             fill_in 'Password confirmation', with: ''
             click_on 'Sign up'
-    #TODO TRADUZIR
-    #TODO FLASH MENSAGEM
+
             expect(current_path).to eq(professional_registration_path)
             expect(page).to_not have_link('Sign up')
             expect(page).to_not have_text("Password can't be blank")
@@ -41,7 +39,7 @@ describe "Account Management" do
           fill_in 'Email', with: 'jane@doe.com.br'
           fill_in 'Password', with: '123456'
           click_on 'Log in'
-          #TODO FLASH MENSAGEM  
+
           expect(page).to have_text('jane@doe.com.br')
           expect(current_path).to eq(root_path)
           expect(page).to have_link('Logout')

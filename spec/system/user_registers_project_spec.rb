@@ -19,11 +19,10 @@ describe "User register project" do
     expect(page).to have_text('Título: Projeto X')
     expect(page).to have_text('Descrição: Projeto X consiste na criação de um site.')
     expect(page).to have_text('Habilidades desejadas: O profissional que pretende colaborar com o Projeto X deve ser pontual e criativo.')
-    expect(page).to have_text('Data limite: 12/10/2221') #TODO FORMATO DA DATA
+    expect(page).to have_text('Data limite: 12/10/2221') 
     expect(page).to have_text('Atuação: Remota')
     expect(page).to have_text('Valor máximo: $200.00')
-    expect(page).to have_text('Projeto criado') #TODO FORMATO DINHEIRO
-     #TODO FORMATO DINHEIRO
+    expect(page).to have_text('Projeto criado') 
     expect(current_path).to eq(plans_path)
     expect(page).to have_button('Voltar')
     end
@@ -46,11 +45,10 @@ describe "User register project" do
         expect(page).to_not have_text('Título: Projeto X')
         expect(page).to_not have_text('Descrição: Projeto X consiste na criação de um site.')
         expect(page).to_not have_text('Habilidades desejadas: O profissional que pretende colaborar com o Projeto X deve ser pontual e criativo.')
-        expect(page).to_not have_text('Data limite: 12/10/2221') #TODO FORMATO DA DATA
+        expect(page).to_not have_text('Data limite: 12/10/2221')
         expect(page).to_not have_text('Atuação: Remota')
         expect(page).to_not have_text('Valor máximo: $200.00')
-        expect(page).to have_text('Projeto não pode ser criado') #TODO FORMATO DINHEIRO
-         #TODO FORMATO DINHEIRO
+        expect(page).to have_text('Projeto não pode ser criado')
         expect(current_path).to eq(plans_path)
         end
 end

@@ -13,9 +13,9 @@ class OffersController < ApplicationController
         @offer.professional = current_professional
         @offer.plan = Plan.find(params[:plan_id])
         if @offer.save
-            redirect_to plan_offer_path(id: @offer), flash: {alert:"Oferta realizada"}#TODO REDIRECT TO @plan
+            redirect_to plan_offer_path(id: @offer), flash: {alert:"Oferta realizada"}
         else
-            redirect_to new_plan_offer_path, flash: {alert:"Oferta não pode ser realizada"} #TODO FLASH ALERT
+            redirect_to new_plan_offer_path, flash: {alert:"Oferta não pode ser realizada"}
         end
     end
 
